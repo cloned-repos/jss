@@ -17,7 +17,7 @@ A higher level overview of v10 release.
 - [all] Each package supports ESM modules import, also possible directly from https://unpkg.com/.
 - [all] Added TypeScript type definitions to this repository.
 
-For more details please read the rest of the changelog.
+For more details please read the rest of the changelog and [migration guide](https://cssinjs.org/migrations/?v=v10.0.0)
 
 ## 10.0.0-alpha.27 (2019-9-22)
 
