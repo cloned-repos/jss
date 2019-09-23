@@ -261,9 +261,11 @@ sheet.addRules({
 
 ## Update function values
 
-`sheet.update(data)`
+`sheet.update(data, options)`
 
 If you use [function values](./jss-syntax.md#function-values), you will want to update them with new data. This method will call all your function values, pass the `data` param and update the CSS Rule if needed.
+
+Since v10, plugins will also be applied to the values returned from functions. If you use it for controlled-animations, you may want to opt-out the processing by using options argument `{process: false}`.
 
 ```javascript
 import jss from 'jss'
