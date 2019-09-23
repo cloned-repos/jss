@@ -355,3 +355,5 @@ const styles = {
   }
 }
 ```
+
+[Here is an example](https://codesandbox.io/s/houdini-typed-value-jmec9) that makes use of typed values API to update a value and avoid CSS parsing.
