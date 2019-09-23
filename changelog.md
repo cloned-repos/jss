@@ -19,6 +19,22 @@ A higher level overview of v10 release.
 
 For more details please read the rest of the changelog and [migration guide](https://cssinjs.org/migrations/?v=v10.0.0)
 
+### Breaking Changes
+
+- [jss] SheetsRegistry.toString(options) will now return all sheets by default, no matter detached or attached. You can specify which one you want by using the option `registry.toString({attached: true})` ([1140](https://github.com/cssinjs/jss/pull/1140))
+- [jss] Add option for opt-in minification of class names. ([#1075](https://github.com/cssinjs/jss/pull/1075))
+- [jss] Observables, function values and rules are now standalone packages, not part of the core. They are still part of the default preset though.
+- [jss] Function values, rules and observables apply plugins by default now, which means they can support all plugin defined syntaxes, but they are also slower by default. To speed them up use `sheet.update(data, {process: false})` for fn values/rules and `jss.use(pluginObservable({process: false}))` when setting up observables plugin. ([#682](https://github.com/cssinjs/jss/pull/682))
+- [jss] Rule @keyframes has now scoped name by default, which means that you can access it using `$ref` from the same sheet and generate global one as before using `@global` rule ([#346](https://github.com/cssinjs/jss/pull/346)).
+- [jss] Add scoped keyframes support ([#346](https://github.com/cssinjs/jss/pull/346))
+- [react-jss] Move JssContext to new React Context, deprecate the `sheetOptions` prop on the JssProvider and support a `media` prop ([#924](https://github.com/cssinjs/jss/pull/924))
+- [react-jss] Remove inject option ([#934](https://github.com/cssinjs/jss/pull/934))
+- [react-jss] Extend classes instead of overwriting theme ([#946](https://github.com/cssinjs/jss/pull/946))
+- [react-jss] Add forwardRef support ([#943](https://github.com/cssinjs/jss/pull/943))
+- [react-jss] Upgrade to theming version 3 ([#942](https://github.com/cssinjs/jss/pull/942))
+- [jss|react-jss] Options `createGenerateClassName` and `generateClassName` are renamed to `createGenerateId` and `generateId` because the same function is now used to scope @keyframes rules.
+- [react-jss] Drop support for older React versions, require v16.3 or higher ([#868](https://github.com/cssinjs/jss/pull/868), [#851](https://github.com/cssinjs/jss/pull/851))
+
 ## 10.0.0-alpha.27 (2019-9-22)
 
 ### Bug fixes
